@@ -28,7 +28,7 @@ public class ProgressBar {
     }
 
     public void move(int currentValue) {
-        int dy = currentValue < maxValue - 1 ? currentValue : maxValue - 1;
+        int dy = Math.min(currentValue, maxValue - 1);
         progressBar.y = progressBarField.y + progressBarField.height - dy - 1;
     }
 
